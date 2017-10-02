@@ -1,0 +1,78 @@
+#!/bin/bash
+
+if [ $(id -u) -eq 0 ]
+then
+	clear
+else
+	if echo $(id) |grep sudo > /dev/null
+	then
+	clear
+	echo "Voce não é root"
+	echo "Seu usuario esta no grupo sudo"
+	echo -e "Para virar root execute \033[1;31msudo su\033[0m"
+	exit
+	else
+	clear
+	echo -e "Vc nao esta como usuario root, nem com seus direitos (sudo)\nPara virar root execute \033[1;31msu\033[0m e digite sua senha root"
+	exit
+	fi
+fi
+clear
+tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
+echo -e "
+\033[4;36m   Escolha uma opção:  \033[0m
+\033[4;33m      Controles OVPN       
+\033[1;35m[1] Instalar OpenVPN
+\033[1;35m[2] Monitor OVPN
+\033[4;33m      Controles SSH        
+\033[1;36m[3] Criar Usuário
+\033[1;36m[4] Users MENU
+\033[1;36m[5] Host MENU
+\033[1;36m[6] Monitor SSH
+\033[4;33m        Misceláneos        
+\033[1;36m[7] Velocidade da Internet
+\033[1;36m[8] Alterar Banner
+\033[1;36m[9] Firewall MENU
+\033[1;36m[10] Liberar UDP (BadVPN)
+\033[1;36m[11] TCP Tweaker
+\033[1;36m[X] Sair\033[0m"
+read -p ": " opcao
+case $opcao in
+ 1)
+  configvps;;
+ 2)
+  cat /etc/openvpn/openvpn-status.log;;
+ 3)
+  criarusuario;;
+ 4)
+  usersmodmenu;;
+ 5)
+  hostmenu;;
+ 6)
+  sshmonitor;;
+ 7)
+ clear 
+ tput setaf 6
+ speedtest-cli --share
+ tput sgr0
+ sleep 10
+ menu;;
+ 8)
+ tput setaf 6
+ clear
+ echo "Seu banner é:"
+ tput setaf 1
+ cat /etc/bannerssh
+ tput sgr0 
+ banner;;
+ 9)
+  firewallmenu;;
+ 10)
+  udp_unlock;;
+ 11)
+  tcptweaker;;
+ 510)
+  nfx;;
+ *)
+  id > /dev/null 2> /dev/null
+esac
