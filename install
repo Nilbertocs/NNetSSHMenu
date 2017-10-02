@@ -24,11 +24,17 @@ tput setaf 6 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
         echo "● Instalar e Configurar o OpenVPN"
         echo "● Instalar um conjunto de scripts como comandos do sistema para o gerenciamento" ; tput sgr0
         echo ""
-tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para instalar..." ; echo "" ; echo "" ; tput sgr0
+tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒00%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
-sleep 2
+tput setaf 6 ; tput bold ; echo "" ; echo "Vamos começar atualizando o sistema e baixando algumas coisas..." ; tput sgr0
+sleep 3
+clear
+tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒02%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Atualizando Sistema..." ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Isso pode demorar um pouco" ; tput sgr0
 
 #tput setaf 6 ; tput bold ; echo "█████████████████████████100%█████████████████████████" ; tput sgr0
 #tput setaf 6 ; tput bold ; echo "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒00%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
@@ -37,36 +43,49 @@ apt-get update 1>/dev/null 2>/dev/null
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "████████████████████▒▒▒▒▒40%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
 apt-get install git 1>/dev/null 2>/dev/null
+sleep 2
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "██████████████████████▒▒▒45%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
 git clone https://github.com/Nilbertocs/NNetPack.git 1>/dev/null 2>/dev/null
+sleep 1
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████50%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
 cd NNetPack
+sleep 2
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████52%█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
 rm -rf README.md
+sleep 1
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████54%██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
 rm -rf install
+sleep 1
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████56%███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Instalando scripts..." ; tput sgr0
 for arqs in `ls`
 do
 rm /bin/$arqs 2>/dev/null
 mv $arqs /bin
 chmod +x /bin/$arqs
 done
+sleep 4
 clear
 tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████60%█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
-echo -e "\033[1;37mConcluido, Execute o comando \033[1;33mMenu\033[1;37m como root \033[0m"
+tput setaf 6 ; tput bold ; echo "" ; echo "Agora vou precisar de um pouco da sua atenção..." ; echo "" ; tput sgr0
+tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
 cd
 rm -rf install 2> /dev/null
 rm -rf VpsPack 2> /dev/null

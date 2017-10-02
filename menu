@@ -39,7 +39,7 @@ echo -e "
 read -p ": " opcao
 case $opcao in
  1)
-  configvps;;
+  configOVPN;;
  2)
   cat /etc/openvpn/openvpn-status.log;;
  3)
