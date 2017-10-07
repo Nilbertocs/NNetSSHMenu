@@ -2,7 +2,7 @@
 #By Haboryn
 rm configurar.sh
 clear
-echo " "
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 echo "              --------------------"
 echo -e '\033[01;32m              O que deseja fazer ?\033[00;37m'
 echo -e '\033[05;31m--------------------------------------------------------\033[00;37m'
@@ -25,15 +25,12 @@ echo -e '   Digite \033[01;32m8\033[00;37m para criar ou renovar Validade SSH/Op
 echo " "
 echo -e '\033[05;31m--------------------------------------------------------\033[00;37m'
 echo " "
-echo -e '\033[05;35mGostou do meu trabalho ?\033[00;37m'
-echo -e '\033[05;35mAjude para que esse meu projeto continue...\033[00;37m'
-echo -e '\033[05;35mDoe BTC para:\033[00;37m \033[05;33m32JFqnK9cyfJkHJd9tz2BkWKQHCRjBX3JC\033[00;37m'
-echo " "
 read -p "Responda: " -e -i 6 resposta
 if [[ "$resposta" = '1' ]]; then
         OpenVPN
 elif [[ "$resposta" = '2' ]]; then
         clear
+        tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
         echo -e '\033[05;31m--------------------------------------------------------\033[00;37m'
         echo "Esta opção irá ligar o monitoramento 24hs de usuários"
 	echo "Verificando quais usuários que expiraram a validade da conta do"

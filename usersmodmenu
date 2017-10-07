@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if [ $(id -u) -eq 0 ]
 then
 	clear
@@ -17,9 +16,8 @@ else
 	exit
 	fi
 fi
-
 clear
-tput setaf 1 ; tput smul ; echo "VPS Management 4.2 © @Nilbertocs" ; tput sgr0
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 echo -e "
 \033[4;36m   Escolha uma opção:  \033[0m
 \033[1;34m    Users MENU
@@ -30,7 +28,6 @@ echo -e "
 \033[1;36m[5] Apagar Usuários Vencidos
 \033[1;36m[6] Voltar\033[0m"
 read -p ": " opcao
-
 case $opcao in
  1)
   alterarlimite;;

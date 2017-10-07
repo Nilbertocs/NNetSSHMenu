@@ -3,11 +3,13 @@ database="/root/usuarios.db"
 echo $$ > /tmp/pids
 if [ ! -f "$database" ]
 then
+	tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 	echo "Arquivo /root/usuarios.db não encontrado"
 	exit 1
 fi
 while true
 do
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%28s%s%-18s\n' "SSH Limiter"
 tput setaf 7 ; tput setab 4 ; printf '  %-30s%s\n' "Usuário" "Conexão/Limite " ; echo "" ; tput sgr0
 	while read usline

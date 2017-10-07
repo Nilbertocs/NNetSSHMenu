@@ -78,6 +78,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
 	do
 	clear
+	tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 		echo "OpenVPN já está instalado"
 		echo ""
 		echo "O que você deseja fazer?"
@@ -88,6 +89,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 		read -p "Selecione a opção [1-4]: " option
 		case $option in
 			1) 
+			tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 			echo ""
 			echo "Diga-me um nome para o usuario"
 			echo "Use somente o nome sem caracteres especiais"
@@ -109,6 +111,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				echo "Você não tem usuarios existentes!"
 				exit 6
 			fi
+			tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 			echo ""
 			echo "Selecione um usuario para remover"
 			tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
@@ -133,6 +136,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			exit
 			;;
 			3) 
+			tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 			echo ""
 			read -p "Você deseja remover OpenVPN? [y/n]: " -e -i n REMOVE
 			if [[ "$REMOVE" = 'y' ]]; then
@@ -183,7 +187,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	done
 else
 	clear
-	tput setaf 1 ; tput smul ; echo "NNET Pack 2.3 © @Nilbertocs" ; tput sgr0
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 	echo 'Bem vindo ao instalador OpenVPN'
 	echo ""
 	# OpenVPN instalador e criação do primeiro usuario
@@ -423,6 +427,7 @@ keepalive 10 20
 float" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
+	tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 	echo ""
 	echo "Concluido!"
 	echo ""

@@ -18,9 +18,7 @@ else
 	fi
 fi
 clear
-tput setaf 1 ; tput smul
-cat /bin/vercao
-tput sgr0
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 echo -e "
 \033[4;36m   Escolha uma opção:  \033[0m
 \033[4;33m      Controles OVPN       

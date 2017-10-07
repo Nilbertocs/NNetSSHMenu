@@ -1,4 +1,5 @@
 #!/bin/bash
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-10s\n' "Alterar Senha de Usuário" ; tput sgr0
 tput bold ; echo "" ; echo "Lista de usuários:" ; echo "" ; tput sgr0
 tput setaf 3 ; tput bold ; awk -F : '$3 >= 500 { print $1 }' /etc/passwd | grep -v '^nobody' ; echo "" ; tput sgr0

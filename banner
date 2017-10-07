@@ -1,5 +1,5 @@
 #!/bin/bash
-
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 tput setaf 6 ; echo "O que vc deseja por no banner ?" ; tput sgr0
 tput setaf 1
 read -p ": " banner

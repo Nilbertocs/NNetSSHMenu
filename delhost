@@ -1,5 +1,6 @@
 #!/bin/bash
 payload="/etc/squid3/payload.txt"
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-10s\n' "Remover Host do Squid3" ; tput sgr0
 if [ ! -f "$payload" ]
 then
