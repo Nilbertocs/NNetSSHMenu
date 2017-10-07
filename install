@@ -71,7 +71,7 @@ awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > /root/o
 fi
 #Compressão SSH 
 echo ""
-tput setaf 3 ; tput bold ; read -p "Ativar a compressão SSH (pode aumentar o consumo de RAM)? [s/n]) " -e -i n sshcompression tput sgr0
+tput setaf 6 ; tput bold ; read -p "Ativar a compressão SSH (pode aumentar o consumo de RAM)? [s/n]) " -e -i n sshcompression tput sgr0
 echo ""
 clear
 tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
