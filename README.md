@@ -1,6 +1,7 @@
 # NNetPack
-Script de comtrole SSH para tunelamento
+Script de controle SSH para tunelamento
 
-Instalação:
-
-wget https://goo.gl/uZspnY -O install && bash install
+# Instalação:
+```
+wget https://raw.githubusercontent.com/Nilbertocs/NNetPack/master/install && bash install
+```
