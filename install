@@ -19,6 +19,7 @@ else
 fi
 rm /bin/vercao
 wget https://raw.githubusercontent.com/Nilbertocs/NNetPack/master/vercao -O /bin/vercao
+clear
 tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
 tput setaf 6 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
         echo "● Instalar e configurar o proxy squid nas portas 80, 3128, 8080 e 8799"
