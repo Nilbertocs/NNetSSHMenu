@@ -34,7 +34,7 @@ echo -e "
 \033[1;36m[8] Alterar Banner
 \033[1;36m[9] Firewall MENU
 \033[1;36m[10] Liberar UDP (BadVPN)
-\033[1;36m[11] TCP Tweaker
+\033[1;36m[11] Open Netflix
 \033[1;36m[X] Sair\033[0m"
 read -p ": " opcao
 case $opcao in
@@ -70,9 +70,7 @@ case $opcao in
  10)
   udp_unlock;;
  11)
-  tcptweaker;;
- 510)
-  nfx;;
+  netflix;;
  *)
   id > /dev/null 2> /dev/null
 esac
