@@ -91,7 +91,6 @@ tput setaf 6 ; tput bold ; echo "" ; echo "████████████�
 tput setaf 6 ; tput bold ; echo "" ; echo "Instalando servidores e iniciando serviços..." ; tput sgr0
 apt-get install squid3 bc screen nano unzip git dos2unix wget htop python-pip -y 1>/dev/null 2>/dev/null
 pip install speedtest-cli
-killall apache2
 apt-get purge apache2 1>/dev/null 2>/dev/null
 clear
 tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
