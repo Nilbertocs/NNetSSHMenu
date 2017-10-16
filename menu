@@ -68,7 +68,7 @@ case $opcao in
  9)
   firewallmenu;;
  10)
-  udp_unlock;;
+  OpenUdp;;
  11)
   netflix;;
  *)
