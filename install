@@ -1,0 +1,86 @@
+#!/bin/bash
+cd
+if [ $(id -u) -eq 0 ]
+then
+clear
+else
+        if echo $(id) |grep sudo > /dev/null
+        then
+        clear
+        echo "Voce não é root"
+        echo "Seu usuario esta no grupo sudo"
+        echo -e "Para virar root e fazer a instalação execute \033[1;31msudo su\033[0m"
+        exit
+        else
+        clear
+        echo -e "Vc pecisa esta como root para poder fazer a instalção, Para virar root execute \033[1;31msu\033[0m e digite sua senha root"
+        exit
+        fi
+fi
+rm /bin/vercao
+wget https://raw.githubusercontent.com/Nilbertocs/NNetPack/master/vercao -O /bin/vercao
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
+        echo "● Instalar MENU de comandos para gerenciar usuários SSH" ; tput sgr0
+        echo ""
+tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒00%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Vamos começar atualizando o sistema e baixando algumas coisas..." ; tput sgr0
+apt-get install screen nano unzip git dos2unix wget htop python-pip -y
+pip install speedtest-cli
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████50%▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
+git clone https://github.com/Nilbertocs/NNetPack.git 1>/dev/null 2>/dev/null
+sleep 1
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████56%███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
+cd NNetPack
+sleep 1
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████62%██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
+rm -rf README.md
+sleep 1
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████68%█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Baixando Pack de scripts para o controle..." ; tput sgr0
+rm -rf install
+sleep 1
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████74%████████████▒▒▒▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Instalando scripts..." ; tput sgr0
+for arqs in `ls`
+do
+rm /bin/$arqs 2>/dev/null
+mv $arqs /bin
+chmod +x /bin/$arqs
+done
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████80%███████████████▒▒▒▒▒▒▒▒▒▒" ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "Criando regras no firewall..." ; tput sgr0
+sleep 1
+clear
+cd
+rm -rf install 2> /dev/null
+rm -rf VpsPack 2> /dev/null
+clear
+tput setaf 1 ; tput smul ; cat /bin/vercao ; tput sgr0
+tput setaf 6 ; tput bold ; echo "" ; echo "█████████████████████████100%█████████████████████████" ; tput sgr0
+echo ""
+tput setaf 2 ; tput setab 1 ; tput bold ; echo "                          Tudo Pronto!!!                         " ; tput sgr0
+tput setaf 7 ; tput setab 1 ; tput bold ; echo "Canal do telegram, para saber de atualizações @NilbertoNNet      " ; tput sgr0
+tput setaf 7 ; tput setab 1 ; tput bold ; echo "Para iniciar use o comando: menu                                 " ; tput sgr0
+tput setaf 7 ; tput setab 1 ; tput bold ; echo "                                                                 " ; tput sgr0
+sleep 2
+menu
