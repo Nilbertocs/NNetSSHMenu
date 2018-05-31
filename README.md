@@ -1,11 +1,9 @@
-# NNetPack
-Script de controle SSH para tunelamento
+# NNet SSH Menu
+Script de controle SSH
 
-
-# Script quebrado, não está configurando corretamente ou squid em algumas distribuições
 
 
 # Instalação:
 ```
-wget https://raw.githubusercontent.com/Nilbertocs/NNetPack/master/install && bash install
+wget https://raw.githubusercontent.com/Nilbertocs/NNetSSHMenu/master/install && bash install
 ```
